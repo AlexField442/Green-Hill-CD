@@ -52,16 +52,12 @@ Start:
 	move.w	#SCMD_INITSS2,d0		; Initialize special stage flags
 	bsr.w	SubCPUCmd
 
-;	moveq	#0,d0
-;	move.l	d0,score			; Reset score
-;	move.b	d0,timeAttackMode		; Reset time attack mode flag
-;	move.b	d0,specialStage			; Reset special stage flag
-;	move.b	d0,checkpoint			; Reset checkpoint
-;	move.w	d0,rings			; Reset ring count
-;	move.l	d0,time				; Reset time
-;	move.b	d0,goodFuture			; Reset good future flag
-;	move.b	d0,projDestroyed		; Reset projector destroyed flag
-;	move.b	#TIME_PRESENT,timeZone		; Set time zone to present
+	moveq	#0,d0
+	move.l	d0,score			; Reset score
+	move.b	d0,specialStage			; Reset special stage flag
+	move.b	d0,checkpoint			; Reset checkpoint
+	move.w	d0,rings			; Reset ring count
+	move.l	d0,time				; Reset time
 
 	moveq	#SCMD_TITLE,d0			; Run title screen
 	bsr.w	RunMMD

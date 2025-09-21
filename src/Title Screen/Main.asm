@@ -96,22 +96,13 @@ Level_MainLoop:
 	andi.b	#$80,p1CtrlTap.w
 	beq.w	Level_MainLoop
 
-	move.b	#$C,gameMode.w
+	move.w	#3,gameMode
 	move.b	#3,lives
 	moveq	#0,d0
 	move.w	d0,rings			; Reset ring count
 	move.l	d0,time				; Reset time
 	move.l	d0,score			; Reset score
 	move.b	d0,specialStage			; Reset special stage flag
-	rts
-
-LevelStart:
-	bset	#0,GAMAINFLAG			; Tell Sub CPU we are finished
-
-.WaitSubCPU:
-	btst	#0,GASUBFLAG			; Has the Sub CPU received our tip?
-	beq.s	.WaitSubCPU			; If not, branch
-	bclr	#0,GAMAINFLAG			; Respond to the Sub CPU
 	rts
 
 ; -------------------------------------------------------------------------

@@ -1,7 +1,7 @@
 ; -------------------------------------------------------------------------
 ; Sonic CD Disassembly
 ; -------------------------------------------------------------------------
-; Level initialization
+; Title screen initialization
 ; -------------------------------------------------------------------------
 
 ; -------------------------------------------------------------------------
@@ -78,25 +78,6 @@ Start:
 .GameInit:
 	bsr.w	InitVDP				; Initialize VDP
 	bsr.w	InitControllers			; Initialize joypads
-
-	move.b	#4,gameMode.w			; Set game mode to "level"
-
-	move.b	gameMode.w,d0			; Go to the current game mode routine
-	andi.w	#$1C,d0
-	jmp	GameModes(pc,d0.w)
-
-; -------------------------------------------------------------------------
-; Game modes
-; -------------------------------------------------------------------------
-
-GameModes:
-	bra.w	LevelStart			; Sega Screen
-	bra.w	TitleScreen			; Title Screen
-	bra.w	LevelStart			; Demo
-	bra.w	LevelStart			; Level
-	bra.w	LevelStart			; Special Stage
-	bra.w	LevelStart			; Continue
-	bra.w	LevelStart			; Ending
-	bra.w	LevelStart			; Credits
+	bra.w	TitleScreen
 
 ; -------------------------------------------------------------------------

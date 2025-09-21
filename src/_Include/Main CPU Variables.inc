@@ -132,7 +132,8 @@ debugAngleShift		rs.b	1		; Debug angle (shifted)
 debugQuadrant		rs.b	1		; Debug quadrant
 debugFloorDist 		rs.b	1		; Debug floor distance
 demoMode		rs.w	1		; Demo mode flag
-			rs.w	1
+
+gameMode		rs.w	1
 s1CreditsIndex		rs.w	1		; Credits index (leftover from Sonic 1)
 versionCache 		rs.b	1		; Hardware version cache
 			rs.b	1
@@ -140,6 +141,7 @@ debugCheat		rs.w	1		; Debug cheat flag
 initFlag 		rs.l	1		; Initialized flag
 checkpoint		rs.b	1		; Checkpoint ID
 			rs.b	1
+
 goodFutureFlags		rs.b	1		; Good future flags
 savedMiniSonic		rs.b	1		; Saved mini Sonic flag
 			rs.b	1

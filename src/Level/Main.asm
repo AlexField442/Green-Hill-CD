@@ -46,7 +46,7 @@ LevelStart:
 	move.b	#1,lives			; Reset life count to 1
 
 .NoReset:
-	bset	#7,gameMode.w			; Mark level as initializing
+	bset	#7,gameMode			; Mark level as initializing
 	bsr.w	ClearPLCs			; Clear PLCs
 
 	tst.b	specialStage			; Are we exiting from a special stage?
@@ -319,7 +319,7 @@ LevelStart:
 	bsr.w	FadeFromBlack			; Fade from black
 
 .BeginLevel:
-	bclr	#7,gameMode.w			; Mark level as initialized
+	bclr	#7,gameMode			; Mark level as initialized
 	move.b	#1,levelStarted			; Mark level as started
 
 ; -------------------------------------------------------------------------
@@ -805,7 +805,7 @@ VInt_Unk6:
 ; -------------------------------------------------------------------------
 
 VInt_Pause:
-	cmpi.b	#$10,gameMode.w			; Are we in the Sonic 1 special stage?
+	cmpi.b	#$10,gameMode			; Are we in the Sonic 1 special stage?
 	beq.w	VInt_S1SpecStg			; If so, branch
 
 ; -------------------------------------------------------------------------

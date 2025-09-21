@@ -48,6 +48,12 @@ Start:
 .GetSaveData:
 	bsr.w	ReadSaveData			; Read save data
 
+  if loadOld=0
+	move.w	#0,gameMode
+  else
+	move.w	#3,gameMode
+  endif
+
 .GameLoop:
 	move.w	#SCMD_INITSS2,d0		; Initialize special stage flags
 	bsr.w	SubCPUCmd
@@ -59,9 +65,7 @@ Start:
 	move.w	d0,rings			; Reset ring count
 	move.l	d0,time				; Reset time
 
-	moveq	#SCMD_TITLE,d0			; Run title screen
-	bsr.w	RunMMD
-
+	move.w	gameMode,d1
 	ext.w	d1				; Run next scene
 	add.w	d1,d1
 	move.w	.Scenes(pc,d1.w),d1
@@ -72,14 +76,20 @@ Start:
 ; -------------------------------------------------------------------------
 
 .Scenes:
-	dc.w	Demo-.Scenes			; Demo mode
-	dc.w	NewGame-.Scenes			; New game
+	dc.w	Title-.Scenes			; 0 SEGA (unused)
+	dc.w	Title-.Scenes			; 1 Title
+	dc.w	Demo-.Scenes			; 2 Demo
+	dc.w	NewGame-.Scenes			; 3 New game
 	dc.w	LoadGame-.Scenes		; Load game
 	dc.w	TimeAttack-.Scenes		; Time attack
 	dc.w	BuRAMManager-.Scenes		; Backup RAM manager
 	dc.w	DAGarden-.Scenes		; D.A. Garden
 	dc.w	VisualMode-.Scenes		; Visual mode
 	dc.w	SoundTest-.Scenes		; Sound test
+
+Title:
+	moveq	#SCMD_TITLE,d0			; Run title screen
+	bra.w	RunMMD
 
 ; -------------------------------------------------------------------------
 ; Backup RAM manager

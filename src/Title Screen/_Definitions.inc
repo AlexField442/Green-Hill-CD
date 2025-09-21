@@ -129,7 +129,21 @@ hscroll 		rs.b	$400		; Horizontal scroll buffer
 objects			rs.b	0		; Object pool
 resObjects		rs.b	0		; Reserved objects
 objPlayerSlot 		rs.b	oSize		; Player slot
-objTitleSonicSlot:	rs.b	oSize
+objTitleSonicSlot	rs.b	oSize		; Player 2 slot
+objHUDScoreSlot		rs.b	oSize		; HUD (score) slot
+objHUDLivesSlot		rs.b	oSize		; HUD (lives) slot
+objTtlCardSlot		rs.b	oSize		; Title card slot
+objHUDRingsSlot		rs.b	oSize		; HUD (rings) slot
+objShieldSlot 		rs.b	oSize		; Shield slot
+objBubblesSlot 		rs.b	oSize		; Bubbles slot
+objInvStar1Slot		rs.b	oSize		; Invincibility star 1 slot
+objInvStar2Slot		rs.b	oSize		; Invincibility star 2 slot
+objInvStar3Slot		rs.b	oSize		; Invincibility star 3 slot
+objInvStar4Slot		rs.b	oSize		; Invincibility star 4 slot
+objTimeStar1Slot	rs.b	oSize		; Time warp star 1 slot
+objTimeStar2Slot	rs.b	oSize		; Time warp star 2 slot
+objTimeStar3Slot	rs.b	oSize		; Time warp star 3 slot
+objTimeStar4Slot	rs.b	oSize		; Time warp star 4 slot
 			rs.b	oSize
 			rs.b	oSize
 			rs.b	oSize
@@ -145,21 +159,7 @@ objTitleSonicSlot:	rs.b	oSize
 			rs.b	oSize
 			rs.b	oSize
 			rs.b	oSize
-			rs.b	oSize
-			rs.b	oSize
-			rs.b	oSize
-			rs.b	oSize
-			rs.b	oSize
-			rs.b	oSize
-			rs.b	oSize
-			rs.b	oSize
-			rs.b	oSize
-			rs.b	oSize
-			rs.b	oSize
-			rs.b	oSize
-			rs.b	oSize
-			rs.b	oSize
-			rs.b	oSize
+objHUDIconSlot		rs.b	oSize		; HUD (life icon) slot
 resObjectsEnd		rs.b	0
 
 dynObjects 		rs.b	$60*oSize	; Dynamic objects
@@ -174,9 +174,7 @@ DYNOBJCOUNT		EQU	(dynObjectsEnd-dynObjects)/oSize
 fmSndQueue1 		rs.b	1		; FM sound queue 1
 fmSndQueue2 		rs.b	1		; FM sound queue 2
 fmSndQueue3 		rs.b	1		; FM sound queue 3
-			rs.b	$5F3
-gameMode 		rs.b	1		; Game mode
-			rs.b	1
+			rs.b	$5F5
 			
 playerCtrl		rs.b	0		; Player controller data
 playerCtrlHold 		rs.b	1		; Player held controller data

@@ -174,9 +174,7 @@ DYNOBJCOUNT		EQU	(dynObjectsEnd-dynObjects)/oSize
 fmSndQueue1 		rs.b	1		; FM sound queue 1
 fmSndQueue2 		rs.b	1		; FM sound queue 2
 fmSndQueue3 		rs.b	1		; FM sound queue 3
-			rs.b	$5F3
-gameMode 		rs.b	1		; Game mode
-			rs.b	1
+			rs.b	$5F5
 			
 playerCtrl		rs.b	0		; Player controller data
 playerCtrlHold 		rs.b	1		; Player held controller data

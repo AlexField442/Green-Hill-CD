@@ -78,18 +78,7 @@ Start:
 .GameInit:
 	bsr.w	InitVDP				; Initialize VDP
 	bsr.w	InitControllers			; Initialize joypads
+	bra.w	LevelStart
 
-	move.b	#0,gameMode.w			; Set game mode to "level"
-
-	move.b	gameMode.w,d0			; Go to the current game mode routine
-	andi.w	#$1C,d0
-	jmp	GameModes(pc,d0.w)
-
-; -------------------------------------------------------------------------
-; Game modes
-; -------------------------------------------------------------------------
-
-GameModes:
-	bra.w	LevelStart			; Level
 
 ; -------------------------------------------------------------------------

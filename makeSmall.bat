@@ -34,7 +34,7 @@ if exist "Sound Drivers\FM\_Driver.p" (
 )
 
 %ASM68K% "CD Initial Program\IP.asm", "..\out\misc\ip.bin", , "CD Initial Program\IP.lst"
-%ASM68K% "CD Initial Program\IPX.asm", "..\out\files\IPX___.MMD",  , "CD Initial Program\IPX.lst"
+%ASM68K% /e loadOld=1 "CD Initial Program\IPX.asm", "..\out\files\IPX___.MMD",  , "CD Initial Program\IPX.lst"
 %ASM68K% "CD System Program\SP.asm", "..\out\misc\sp.bin", , "CD System Program\SP.lst"
 %ASM68K% /e loadOld=1 "CD System Program\SPX.asm", "..\out\files\SPX___.BIN", , "CD System Program\SPX.lst"
 %ASM68K% "Backup RAM\Initialization\Main.asm", "..\out\files\BRAMINIT.MMD", , "Backup RAM\Initialization\Main.lst"

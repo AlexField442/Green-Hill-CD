@@ -1,0 +1,37 @@
+*.lst
+*.log
+*.sym
+out/
+_original/japan/*.TXT
+_original/japan/*.BIN
+_original/japan/*.MMD
+_original/japan/*.STM
+_original/japan/*.idb
+_original/japan/*.id0
+_original/japan/*.id1
+_original/japan/*.nam
+_original/japan/*.til
+_original/usa/*.TXT
+_original/usa/*.BIN
+_original/usa/*.MMD
+_original/usa/*.STM
+_original/usa/*.idb
+_original/usa/*.id0
+_original/usa/*.id1
+_original/usa/*.nam
+_original/usa/*.til
+_original/europe/*.TXT
+_original/europe/*.BIN
+_original/europe/*.MMD
+_original/europe/*.STM
+_original/europe/*.idb
+_original/europe/*.id0
+_original/europe/*.id1
+_original/europe/*.nam
+_original/europe/*.til
+src/_SonLVL/dllcache
+src/Special Stage/Stage Data Labels.inc
+src/Special Stage/Stage Data.bin
+src/DA Garden/Track Title Labels.inc
+
+_tools/
